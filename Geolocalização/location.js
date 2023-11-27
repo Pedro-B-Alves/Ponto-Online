@@ -1,29 +1,30 @@
-const axios = require('axios');
-
 // PositionStack API access key
 const apiKey = '5abcb0b627b6519cbbe47c0d7feb8809';
 
 // Coordinates (latitude and longitude)
-const latitude = -23.62427221; // Replace with your latitude
-const longitude = -46.70136611; // Replace with your longitude
+const latitude = -23.62427221; // Substitua com sua latitude
+const longitude = -46.70136611; // Substitua com sua longitude
 
-// Construct the URL for the PositionStack API request
+// Construa a URL para a requisição à API PositionStack
 const apiUrl = `http://api.positionstack.com/v1/reverse?access_key=${apiKey}&query=${latitude},${longitude}`;
 
-// Make the API request
-axios
-  .get(apiUrl)
-  .then((response) => {
-    // Extract the address information from the API response
-    const data = response.data.data[1];
-    if (data) {
-      const address = data; // The addresss
+// Faça a requisição à API
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Erro de requisição: ${response.statusText}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Extraia as informações de endereço da resposta da API
+    const address = data.data[1];
+    if (address) {
       console.log(address);
     } else {
-      console.error('No address found for the given coordinates.');
+      console.error('Nenhum endereço encontrado para as coordenadas fornecidas.');
     }
   })
-  .catch((error) => {
-    console.error('Error:', error.message);
+  .catch(error => {
+    console.error('Erro:', error.message);
   });
-
