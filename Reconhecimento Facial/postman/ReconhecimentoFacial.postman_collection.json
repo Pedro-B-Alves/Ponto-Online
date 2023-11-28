@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "f1d6c891-5893-4171-a7f4-4fcadaee123b",
+		"name": "ReconhecimentoFacial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15035150"
+	},
+	"item": [
+		{
+			"name": "recognize",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image_url\": \"https://media.moneytimes.com.br/uploads/2021/04/dwayne-johnson.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/recognize",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"recognize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"theRock\",\r\n    \"image_urls\": [\"https://ogimg.infoglobo.com.br/in/24581416-aae-bd5/FT1086A/THEROCK.jpg\", \"https://s2-techtudo.glbimg.com/eZA3MfymxGYzGBJK0Ig8EY7ETwA=/0x0:1080x995/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/B/l/bRJmJAQiWdlUY2BWM39w/1.-the-rock.jpg\", \"https://cloudfront-us-east-1.images.arcpublishing.com/estadao/PTBYNC7LC5N37NDR6XGAF7EVEQ.jpg\", \"https://i0.wp.com/maquinadoesporte.com.br/wp-content/uploads/2023/02/dwayne_johnson_the_rock.jpg?fit=1121%2C677&ssl=1\", \"https://previous-assets.menshealth.pt/files/2021/07/the-rock.jpg\", \"https://pop.proddigital.com.br/wp-content/uploads/sites/8/2023/07/01-110.jpg\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
